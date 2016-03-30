@@ -9,5 +9,9 @@
 	"homepage":     "https://github.com/derhuerst/vbb-disruptions",
 	"repository":   "git://github.com/derhuerst/vbb-disruptions.git",
 	"license":      "ISC",
-	"engines":      {"node": ">=4"}
+	"engines":      {"node": ">=4"},
+	"scripts": {
+		"test":          "./test.js",
+		"prepublish":    "npm test"
+	}
 }
