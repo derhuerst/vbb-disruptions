@@ -1,0 +1,13 @@
+{
+	"name":         "vbb-disruptions",
+	"description":  "Disruptions in VBB public transport.",
+	"version":      "0.1.0",
+	"main":         "./index.js",
+	"files":        ["./index.js"],
+	"keywords":     ["vbb", "disruptions", "announcements"],
+	"author":       "Jannis R <mail@jannisr.de>",
+	"homepage":     "https://github.com/derhuerst/vbb-disruptions",
+	"repository":   "git://github.com/derhuerst/vbb-disruptions.git",
+	"license":      "ISC",
+	"engines":      {"node": ">=4"}
+}
