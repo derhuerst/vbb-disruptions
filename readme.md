@@ -1,6 +1,6 @@
 # *vbb-disruptions*
 
-todo [ISC-licensed](license.md).
+Queries disruptions in VBB public transport from an [anonymous JSON API](http://ip029232.beuth-hochschule.de/sbahnstoerungen/reports.json) hosted at [Beuth-Hochschule Berlin](http://beuth-hochschule.de/). [ISC-licensed](license.md).
 
 [![npm version](https://img.shields.io/npm/v/vbb-disruptions.svg)](https://www.npmjs.com/package/vbb-disruptions)
 [![build status](https://img.shields.io/travis/derhuerst/vbb-disruptions.svg)](https://travis-ci.org/derhuerst/vbb-disruptions)
