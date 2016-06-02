@@ -7,10 +7,10 @@ const _ = require('./helpers')
 
 
 
-const lineInClass = /--(\w+)(\s|$)/g
+const lineInClass = /--(\w+)(\s|$)/
 const fromClass = (c) => {
-	const s = lineInClass.exec(c)
-	return s ? s[1] : null
+	const s = c.match(lineInClass)
+	return s ? s[1].toUpperCase() : null
 }
 
 const disruptions = () =>
