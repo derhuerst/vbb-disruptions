@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 'use strict'
 
-const a           = require('assert')
-
+const a = require('assert')
 const disruptions = require('./index.js')
 
 
 
-disruptions().then((all) => {
+disruptions().catch(a.ifError)
+.then((all) => {
 	a.ok('object' === typeof all, 'does not resolve with an object')
 	for (let line in all) {
 		let disruptions = all[line]
