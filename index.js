@@ -23,7 +23,7 @@ const parseDisruption = (a) => ({
 	, to:          (a.to_station === 'unknown' ? null : a.to_station)
 })
 
-const disruption = () =>
+const disruptions = () =>
 	got('http://ip029232.beuth-hochschule.de/sbahnstoerungen/reports.json')
 	.then((res) => {
 		let data = JSON.parse(res.body)
@@ -35,4 +35,4 @@ const disruption = () =>
 
 
 
-module.exports = disruption
+module.exports = disruptions
