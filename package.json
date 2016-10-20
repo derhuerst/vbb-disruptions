@@ -11,8 +11,8 @@
 	"license":      "ISC",
 	"engines":      {"node": ">=4"},
 	"dependencies": {
-		"got": "^6.3",
-		"cheerio": "^0.20"
+		"got": "^6.5",
+		"cheerio": "^0.22"
 	},
 	"devDependencies": {
 		"vbb-parse-line": "^0.2"
