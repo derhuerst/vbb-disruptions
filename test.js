@@ -7,10 +7,9 @@ const disruptions = require('./index.js')
 
 
 
-const err = (err) => {
-	console.error(err.stack)
+const showError = (err) => {
+	console.error(err)
 	process.exit(1)
-	return err
 }
 
 disruptions()
@@ -27,4 +26,5 @@ disruptions()
 		a.strictEqual(typeof d.when, 'string')
 		a.strictEqual(typeof d.description, 'string')
 	}
-}, err).catch(err)
+})
+.catch(showError)

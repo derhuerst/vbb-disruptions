@@ -34,7 +34,6 @@ const disruptions = () =>
 			Array.from($('tr', e)).reduce(row, disruption)
 			return disruption
 		})
-	}
-	, (err) => err)
+	})
 
 module.exports = disruptions

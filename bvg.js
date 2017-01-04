@@ -47,7 +47,6 @@ const disruptions = () =>
 			}, {})
 
 		return Array.from($('table.traffic-overview tbody tr')).map(row)
-	}
-	, (err) => err)
+	})
 
 module.exports = disruptions
