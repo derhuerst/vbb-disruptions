@@ -1,15 +1,16 @@
 'use strict'
 
-const got     = require('got')
+const fetch = require('isomorphic-fetch')
 const cheerio = require('cheerio')
 const _ = require('./helpers')
 
 
 
 const disruptions = () =>
-	got(`http://mobil.s-bahn-berlin.de/constructions/overview`)
-	.then((res) => {
-		const $ = cheerio.load(res.body)
+	fetch(`http://mobil.s-bahn-berlin.de/constructions/overview`)
+	.then((res) => res.text())
+	.then((body) => {
+		const $ = cheerio.load(body)
 
 		const row = (disruption, row) => {
 			let key = $('th', row).text()

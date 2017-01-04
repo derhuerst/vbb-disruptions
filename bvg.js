@@ -1,6 +1,6 @@
 'use strict'
 
-const got = require('got')
+const fetch = require('isomorphic-fetch')
 const cheerio = require('cheerio')
 const url = require('url')
 const _ = require('./helpers')
@@ -14,9 +14,10 @@ const fromClass = (c) => {
 }
 
 const disruptions = () =>
-	got(`https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen`)
-	.then((res) => {
-		const $ = cheerio.load(res.body)
+	fetch(`https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen`)
+	.then((res) => res.text())
+	.then((body) => {
+		const $ = cheerio.load(body)
 		const columns = Array.from($('table.traffic-overview th'))
 			.map((e) => $(e).text())
 
