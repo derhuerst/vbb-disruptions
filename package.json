@@ -1,7 +1,7 @@
 {
 	"name":         "vbb-disruptions",
 	"description":  "Disruptions in VBB public transport.",
-	"version":      "0.2.0",
+	"version":      "0.3.0",
 	"main":         "index.js",
 	"files":        ["index.js", "sbahn.js", "bvg.js", "helpers.js"],
 	"keywords":     ["vbb", "bvg", "disruptions", "announcements", "closures", "interruption"],
@@ -9,16 +9,17 @@
 	"homepage":     "https://github.com/derhuerst/vbb-disruptions",
 	"repository":   "derhuerst/vbb-disruptions",
 	"license":      "ISC",
-	"engines":      {"node": ">=4"},
+	"bugs":         "https://github.com/derhuerst/vbb-disruptions/issues",
+	"engines":      {"node": ">=6"},
 	"dependencies": {
-		"got": "^6.5",
+		"got": "^6.7.1",
 		"cheerio": "^0.22"
 	},
 	"devDependencies": {
 		"vbb-parse-line": "^0.2"
 	},
 	"scripts": {
-		"test":          "./test.js",
-		"prepublish":    "npm test"
+		"test": "node test.js",
+		"prepublish": "npm test"
 	}
 }
