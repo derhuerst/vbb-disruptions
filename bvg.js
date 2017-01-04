@@ -14,7 +14,7 @@ const fromClass = (c) => {
 }
 
 const disruptions = () =>
-	got(`http://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen`)
+	got(`https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen`)
 	.then((res) => {
 		const $ = cheerio.load(res.body)
 		const columns = Array.from($('table.traffic-overview th'))
@@ -31,7 +31,7 @@ const disruptions = () =>
 					key = 'lines'
 					value = _.line(value)
 					if (!value) value = // wat
-						fromClass(cell.children().first().attr('class'))
+						fromClass(cell.children('.icon-t').first().attr('class'))
 					value = [value]
 				} else if (key === 'Gültig') {
 					key = 'when'
