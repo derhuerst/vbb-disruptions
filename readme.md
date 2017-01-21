@@ -4,6 +4,7 @@
 
 [![npm version](https://img.shields.io/npm/v/vbb-disruptions.svg)](https://www.npmjs.com/package/vbb-disruptions)
 [![build status](https://img.shields.io/travis/derhuerst/vbb-disruptions.svg)](https://travis-ci.org/derhuerst/vbb-disruptions)
+[![Windows build status](https://img.shields.io/appveyor/ci/derhuerst/vbb-disruptions.svg)](https://ci.appveyor.com/project/derhuerst/vbb-disruptions)
 [![dependency status](https://img.shields.io/david/derhuerst/vbb-disruptions.svg)](https://david-dm.org/derhuerst/vbb-disruptions)
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/vbb-disruptions.svg)](https://david-dm.org/derhuerst/vbb-disruptions#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/vbb-disruptions.svg)
