@@ -7,6 +7,8 @@ const _ = require('./helpers')
 
 
 
+const endpoint = (process.env.CI ? 'http' : 'https') + '://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen'
+
 const lineInClass = /--(\w+)(\s|$)/
 const fromClass = (c) => {
 	const s = c.match(lineInClass)
@@ -14,7 +16,7 @@ const fromClass = (c) => {
 }
 
 const disruptions = () =>
-	fetch(`https://www.bvg.de/de/Fahrinfo/Verkehrsmeldungen`)
+	fetch(endpoint)
 	.then((res) => res.text())
 	.then((body) => {
 		const $ = cheerio.load(body)
