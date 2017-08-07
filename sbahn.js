@@ -33,6 +33,10 @@ const disruptions = () =>
 				where: $('h4', e).text()
 			}
 			Array.from($('tr', e)).reduce(row, disruption)
+
+			if ($('.badge .glyphicon-night', e)[0]) disruption.night = true
+			if ($('.badge .glyphicon-weekend', e)[0]) disruption.weekend = true
+
 			return disruption
 		})
 	})
