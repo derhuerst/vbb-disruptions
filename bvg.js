@@ -1,6 +1,6 @@
 'use strict'
 
-const fetch = require('isomorphic-fetch')
+const {fetch} = require('fetch-ponyfill')({Promise: require('pinkie-promise')})
 const cheerio = require('cheerio')
 const url = require('url')
 const _ = require('./helpers')

@@ -12,7 +12,8 @@
 	"bugs":         "https://github.com/derhuerst/vbb-disruptions/issues",
 	"engines":      {"node": ">=6"},
 	"dependencies": {
-		"isomorphic-fetch": "^2.2.1",
+		"fetch-ponyfill": "^4.0.0",
+		"pinkie-promise": "^2.0.1",
 		"cheerio": "^1.0.0-rc.1"
 	},
 	"devDependencies": {
