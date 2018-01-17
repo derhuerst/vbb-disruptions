@@ -17,7 +17,7 @@
 		"cheerio": "^1.0.0-rc.1"
 	},
 	"devDependencies": {
-		"vbb-parse-line": "^0.2"
+		"vbb-parse-line": "^0.3.0"
 	},
 	"scripts": {
 		"test": "node test.js",
