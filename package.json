@@ -12,7 +12,7 @@
 	"bugs":         "https://github.com/derhuerst/vbb-disruptions/issues",
 	"engines":      {"node": ">=6"},
 	"dependencies": {
-		"fetch-ponyfill": "^5.0.0",
+		"fetch-ponyfill": "^6.0.0",
 		"pinkie-promise": "^2.0.1",
 		"cheerio": "^1.0.0-rc.1"
 	},
