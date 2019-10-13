@@ -1,20 +1,35 @@
 {
-	"name":         "vbb-disruptions",
-	"description":  "Scrapes disruptions from the S-Bahn Berlin website and the BVG website.",
-	"version":      "0.3.1",
-	"main":         "index.js",
-	"files":        ["index.js", "sbahn.js", "bvg.js", "helpers.js"],
-	"keywords":     ["vbb", "bvg", "disruptions", "announcements", "closures", "interruption"],
-	"author":       "Jannis R <mail@jannisr.de>",
-	"homepage":     "https://github.com/derhuerst/vbb-disruptions",
-	"repository":   "derhuerst/vbb-disruptions",
-	"license":      "ISC",
-	"bugs":         "https://github.com/derhuerst/vbb-disruptions/issues",
-	"engines":      {"node": ">=6"},
+	"name": "vbb-disruptions",
+	"description": "Scrapes disruptions from the S-Bahn Berlin website and the BVG website.",
+	"version": "0.3.1",
+	"main": "index.js",
+	"files": [
+		"index.js",
+		"sbahn.js",
+		"bvg.js",
+		"helpers.js"
+	],
+	"keywords": [
+		"vbb",
+		"bvg",
+		"disruptions",
+		"announcements",
+		"closures",
+		"interruption"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/vbb-disruptions",
+	"repository": "derhuerst/vbb-disruptions",
+	"license": "ISC",
+	"bugs": "https://github.com/derhuerst/vbb-disruptions/issues",
+	"engines": {
+		"node": ">=8"
+	},
 	"dependencies": {
+		"cheerio": "^1.0.0-rc.1",
+		"feedme": "^1.0.0",
 		"fetch-ponyfill": "^4.0.0",
-		"pinkie-promise": "^2.0.1",
-		"cheerio": "^1.0.0-rc.1"
+		"pinkie-promise": "^2.0.1"
 	},
 	"devDependencies": {
 		"vbb-parse-line": "^0.2"

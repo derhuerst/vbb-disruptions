@@ -1,8 +1,5 @@
-sudo: false
-# will make the build jobs run on GCE. running them on AWS fails because bvg.de blocks connections.
-sudo: required
 language: node_js
 node_js:
   - 'stable'
-  - '7'
+  - 'lts/*'
   - '6'

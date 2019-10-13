@@ -9,6 +9,7 @@
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/vbb-disruptions.svg)](https://david-dm.org/derhuerst/vbb-disruptions#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/vbb-disruptions.svg)
 [![gitter channel](https://badges.gitter.im/derhuerst/vbb-rest.svg)](https://gitter.im/derhuerst/vbb-rest)
+[![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
 
 
 ## Installing
@@ -49,6 +50,12 @@ disruptions().then(console.log)
 	}
 ]
 ```
+
+
+## Related
+
+- [`sbahn-berlin-tweets`](https://github.com/derhuerst/sbahn-berlin-tweets) – Fetch & parse [`@SBahnBerlin`](https://mobile.twitter.com/SBahnBerlin) tweets on the operating status of [S-Bahn Berlin](https://en.wikipedia.org/wiki/Berlin_S-Bahn).
+- [`augment-vbb-hafas`](https://github.com/derhuerst/augment-vbb-hafas) – Augment [VBB HAFAS](https://npmjs.com/package/vbb-hafas) responses with realtime data from other channels.
 
 
 ## Contributing

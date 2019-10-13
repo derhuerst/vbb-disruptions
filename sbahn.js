@@ -1,44 +1,38 @@
 'use strict'
 
 const {fetch} = require('fetch-ponyfill')({Promise: require('pinkie-promise')})
-const cheerio = require('cheerio')
+const FeedParser = require('feedme')
 const _ = require('./helpers')
 
+const parseFeed = (xml) => new Promise((yay, nay) => {
+	const parser = new FeedParser()
+	parser.once('error', nay)
+	parser.once('end', () => yay(disruptions))
 
+	const disruptions = []
+	parser.on('item', (item) => {
+		if (!item['sbb:line']) return // filter out spam
 
-const disruptions = () =>
-	fetch(`http://mobil.s-bahn-berlin.de/constructions/overview`)
-	.then((res) => res.text())
-	.then((body) => {
-		const $ = cheerio.load(body)
-
-		const row = (disruption, row) => {
-			let key = $('th', row).text()
-			let value = $('td', row).text()
-			if (key === 'Linien') {
-				key = 'lines'
-				value = _.clean(value).split('\n')
-			}
-			else if (key === 'Wann') key = 'when'
-			else if (key === 'Infos') {
-				key = 'description'
-				value = _.clean(value)
-			}
-			disruption[key] = value
-			return disruption
-		}
-
-		return Array.from($('#content .list-group li')).map((e) => {
-			const disruption = {
-				where: $('h4', e).text()
-			}
-			Array.from($('tr', e)).reduce(row, disruption)
-
-			if ($('.badge .glyphicon-night', e)[0]) disruption.night = true
-			if ($('.badge .glyphicon-weekend', e)[0]) disruption.weekend = true
-
-			return disruption
-		})
+		const lines = Array.isArray(item['sbb:line'])
+			? item['sbb:line'].map(l => l.name)
+			: [item['sbb:line'].name]
+		const when = new Date(item.pubdate)
 	})
+	parser.write(xml)
+})
+
+const disruptions = () => {
+	// todo: streaming fetch?
+	return fetch('https://app-v2.s-bahn-berlin.de/feed/constructions')
+	.then((res) => {
+		if (!res.ok) {
+			const err = new Error(res.statusText)
+			err.statusCode = res.status
+			throw err
+		}
+		return res.text()
+	})
+	.then(parseFeed)
+}
 
 module.exports = disruptions
